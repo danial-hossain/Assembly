@@ -1,8 +1,8 @@
 .model small
 .stack 100h
 .data
-a db 0001
-b db 0001
+a db 0001b
+b db 0001b
 .code
 
 main proc 
