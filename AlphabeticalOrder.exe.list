@@ -1,0 +1,120 @@
+EMU8086 GENERATED LISTING. MACHINE CODE <- SOURCE.
+ 
+AlphabeticalOrder.exe -- emu8086 assembler version: 4.08  
+ 
+[ 21/07/2025  --  5:42:24 AM ] 
+ 
+===================================================================================================
+[LINE]     LOC: MACHINE CODE                          SOURCE
+===================================================================================================
+ 
+[   1]        :                                       .model small
+[   2]        :                                       .stack 100h
+[   3]        :                                       .data
+[   4]    0100: 45 6E 74 65 72 20 31 73 74 20 43 61   a db 'Enter 1st Capital Alphabet : $'
+                70 69 74 61 6C 20 41 6C 70 68 61 62 
+                65 74 3A 20 24                      
+[   5]    011D: 45 6E 74 65 72 20 31 73 74 20 43 61   b db 'Enter 1st Capital Alphabet : $'
+                70 69 74 61 6C 20 41 6C 70 68 61 62 
+                65 74 3A 20 24                      
+[   6]        :                                       .code
+[   7]        :                                       
+[   8]    0140:                                       main proc
+[   9]    0140: B8 10 00                              mov ax,@data
+[  10]    0143: 8E D8                                 mov ds,ax
+[  11]        :                                       
+[  12]    0145: B4 02                                 mov ah,2
+[  13]    0147: B8 00 00                              lea ax,a
+[  14]    014A: CD 21                                 int 21h
+[  15]        :                                       
+[  16]    014C: B4 01                                 mov ah,1
+[  17]    014E: CD 21                                 int 21h
+[  18]    0150: 8A D8                                 mov bl,al
+[  19]        :                                       
+[  20]        :                                       
+[  21]    0152: B4 02                                 mov ah,2
+[  22]    0154: B8 00 00                              lea ax,a
+[  23]    0157: CD 21                                 int 21h
+[  24]        :                                       
+[  25]    0159: B4 01                                 mov ah,1
+[  26]    015B: CD 21                                 int 21h
+[  27]    015D: 8A F8                                 mov bh,al
+[  28]        :                                       
+[  29]    015F: 3A DF                                 cmp bl,bh
+[  30]    0161: 7F 14                                 jg L1
+[  31]        :                                       
+[  32]    0163:                                       L2:
+[  33]    0163: B4 02                                 mov ah,2
+[  34]    0165: B2 0A                                 mov dl,10
+[  35]    0167: CD 21                                 int 21h
+[  36]    0169: B2 0D                                 mov dl,13
+[  37]    016B: CD 21                                 int 21h
+[  38]    016D: 8A D3                                 mov dl,bl
+[  39]    016F: CD 21                                 int 21h
+[  40]    0171: 8A D7                                 mov dl,bh
+[  41]    0173: CD 21                                 int 21h
+[  42]    0175: EB 12                                 jmp exit
+[  43]        :                                       
+[  44]    0177:                                       L1:
+[  45]        :                                       
+[  46]    0177: B4 02                                 mov ah,2
+[  47]    0179: B2 0A                                 mov dl,10
+[  48]    017B: CD 21                                 int 21h
+[  49]    017D: B2 0D                                 mov dl,13
+[  50]    017F: CD 21                                 int 21h
+[  51]    0181: 8A D7                                 mov dl,bh
+[  52]    0183: CD 21                                 int 21h
+[  53]    0185: 8A D3                                 mov dl,bl
+[  54]    0187: CD 21                                 int 21h
+[  55]        :                                       
+[  56]    0189:                                       exit:
+[  57]    0189: B4 4C                                 mov ah,4ch
+[  58]    018B: CD 21                                 int 21h
+[  59]        :                                       main endp
+[  60]        :                                       end main
+[  61]        :                                       
+ 
+===================================================================================================
+ 
+EXE HEADER - bytes from 0000 to 01FF inclusive.
+
+0000: 4D      -   exe signature (M)
+0001: 5A      -   exe signature (Z)
+0002: 8D      -   bytes on last page (l.byte)
+0003: 01      -   bytes on last page (h.byte)
+0004: 02      -   512 byte pages in file (l.byte)
+0005: 00      -   512 byte pages in file (h.byte)
+0006: 01      -   relocations (l.byte)
+0007: 00      -   relocations (h.byte)
+0008: 20      -   paragraphs in header (l.byte)
+0009: 00      -   paragraphs in header (h.byte)
+000A: 00      -   minimum memory (l.byte)
+000B: 00      -   minimum memory (h.byte)
+000C: FF      -   maximum memory (l.byte)
+000D: FF      -   maximum memory (h.byte)
+000E: 00      -   SS - stack segment (l.byte)
+000F: 00      -   SS - stack segment (h.byte)
+0010: 00      -   SP - stack pointer (l.byte)
+0011: 01      -   SP - stack pointer (h.byte)
+0012: D7      -   check sum (l.byte)
+0013: AA      -   check sum (h.byte)
+0014: 00      -   IP - instruction pointer (l.byte)
+0015: 00      -   IP - instruction pointer (h.byte)
+0016: 14      -   CS - code segment (l.byte)
+0017: 00      -   CS - code segment (h.byte)
+0018: 1E      -   relocation table adress (l.byte)
+0019: 00      -   relocation table adress (h.byte)
+001A: 00      -   overlay number (l.byte)
+001B: 00      -   overlay number (h.byte)
+001C: 01      -   signature (l.byte)
+001D: 00      -   signature (h.byte)
+001E: 01      -   relocation table - offset inside segment (l.byte)
+001F: 00      -   relocation table - offset inside segment (h.byte)
+0020: 14      -   relocation table - segment anchor (l.byte)
+0021: 00      -   relocation table - segment anchor (h.byte)
+0022 to 01FF  -   reserved relocation area  (00) 
+
+
+
+
+===================================================================================================
