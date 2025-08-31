@@ -53,10 +53,10 @@ Valid:
  
   mov bl,al
   
-  cmp bl,57
-    
+  cmp bl,57 
   jg L2     
-  
+
+
     L1: 
    mov ah,2
    mov dl,13
@@ -78,9 +78,6 @@ Valid:
    sub bl,17
    mov dl,bl
    int 21h 
-  
-   
-
          
   Goto:  
    mov ah,2
